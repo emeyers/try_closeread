@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -73,35 +39,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta cr-debug-mode="false">
 <meta cr-remove-header-space="false">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="_extensions/qmd-lab/closeread/closeread.css">
 </head>
@@ -114,8 +51,8 @@ window.Quarto = {
       <!-- user-provided yaml closeread style options -->
       <style>
         :root {
-          --cr-narrative-background-color-overlay: darkslategrey;
---cr-narrative-text-color-overlay: #e2e2e2;
+          --cr-narrative-text-color-overlay: #e2e2e2;
+--cr-narrative-background-color-overlay: darkslategrey;
         }
       </style>
     
@@ -139,20 +76,6 @@ window.Quarto = {
 </header>
 
 
-<p>To get the <a href="https://closeread.dev/">Closeread</a> extension to work, you need to run the following command in the terminal (bottom tab near the console).</p>
-<ol type="1">
-<li>Make sure the terminal is in the same directory as this .qmd file.</li>
-<li>Run the following command in the terminal: <code>quarto add qmd-lab/closeread</code></li>
-</ol>
-<p>This should create a <code>_extensions</code> directory that has the javascript code needed to run the closeread document.</p>
-<p>If this doesn’t work you might have to start a new terminal by going to Tools at the top of the RStudio menu, then click on terminal, then click on new terminal.</p>
-<p>You might also need to install Quarto if it has not already been installed with RStudio. You can install Quarto from <a href="https://quarto.org/docs/download/">this webpage</a></p>
-<!--  Please run the code in the  R chunk below once. This will download data 
-and images needed for these exercises.  -->
-<p><span class="math inline">\(\\\)</span></p>
-<section id="closeread-basics" class="level2">
-<h2 class="anchored" data-anchor-id="closeread-basics">Closeread basics</h2>
-<p>Let’s start with a basic close read section <code>{.cr-section}</code> where we scroll text over an R graphic.</p>
 <div class="cr-section cr-column-screen overlay-left">
 <div class="narrative-col">
 <div class="trigger new-trigger" data-focus-on="cr-graphic">
@@ -178,7 +101,7 @@ and images needed for these exercises.  -->
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="try_closeread_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="try_closeread_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -187,112 +110,6 @@ and images needed for these exercises.  -->
 </div>
 </div>
 </div>
-<p><span class="math inline">\(\\\)</span></p>
-</section>
-<section id="highlighting" class="level2">
-<h2 class="anchored" data-anchor-id="highlighting">Highlighting</h2>
-<p>Let’s now explore highlighting text and code.</p>
-<p>As always, we start by wrapping everything in a <code>{.cr-section}</code>.</p>
-<p>Let’s first highlight some code, and then let’s highlight some text.</p>
-<div class="cr-section cr-column-screen overlay-left">
-<div class="narrative-col">
-<div class="trigger new-trigger" data-focus-on="cr-dplyr">
-<div class="narrative">
-<p>Let’s demonstrate some <code>dplyr</code> code.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-highlight="1" data-focus-on="cr-dplyr">
-<div class="narrative">
-<p>This is where we load the library.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-highlight="2-4" data-focus-on="cr-dplyr">
-<div class="narrative">
-<p>This calculates summary statistics.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-limerick">
-<div class="narrative">
-<p>Here is a Limerick generated by chatGPT</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-highlight="cr-claire,cr-prayer,cr-flair" data-focus-on="cr-limerick">
-<div class="narrative">
-<p>These lines need to rhyme to be a Limerick</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-highlight="cr-r,cr-bizarre" data-focus-on="cr-limerick">
-<div class="narrative">
-<p>And these lines need to rhyme as well</p>
-</div>
-</div>
-<div class="trigger">
-<div class="narrative">
-<p>We were able to do this highlighting by putting tags on individual words!</p>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-dplyr" class="sticky">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mtcars, am) <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">avg_wt =</span> <span class="fu">mean</span>(wt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-     am avg_wt
-  &lt;dbl&gt;  &lt;dbl&gt;
-1     0   3.77
-2     1   2.41</code></pre>
-</div>
-</div>
-</div>
-<div id="cr-limerick" class="sticky">
-<div class="line-block"><span id="lb1-1">There once was a coder named <span id="cr-claire">Claire</span>,</span><br>
-<span id="lb1-2">Whose scripts worked by luck and a <span id="cr-prayer">prayer</span>.</span><br>
-<span id="lb1-3">&nbsp;&nbsp;When she coded in <span id="cr-r">R</span>,</span><br>
-<span id="lb1-4">&nbsp;&nbsp;Her results were <span id="cr-bizarre">bizarre</span>—</span><br>
-<span id="lb1-5">But her plots were a work of great <span id="cr-flair">flair</span>!</span></div>
-</div>
-</div>
-</div>
-</div>
-<p><span class="math inline">\(\\\)</span></p>
-</section>
-<section id="zooming" class="level2">
-<h2 class="anchored" data-anchor-id="zooming">Zooming</h2>
-<p>Let’s now explore zooming in on a specific part an image.</p>
-<p>As always, we start by wrapping everything in a <code>{.cr-section}</code>.</p>
-<p>Let’s first zoom in on the histogram from the previous section.</p>
-<div class="cr-section cr-column-screen overlay-left">
-<div class="narrative-col">
-<div class="trigger new-trigger" data-focus-on="cr-waldo">
-<div class="narrative">
-<p>Can you find waldo?</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-scale-by="5" data-pan-to="35%,-100%" data-focus-on="cr-waldo">
-<div class="narrative">
-<p>Here he is!</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-waldo">
-<div class="narrative">
-<p>Can you see him when we zoom out again?</p>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-waldo" class="sticky">
-<p><img src="waldo.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</div>
-</section>
 
 </main>
 <!-- /main column -->
