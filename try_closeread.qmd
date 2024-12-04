@@ -1,12 +1,6 @@
 ---
 title: Try Closeread
-format:
-  closeread-html:
-    cr-section:
-      layout: "overlay-left"
-    cr-style:
-      narrative-background-color-overlay: darkslategrey
-      narrative-text-color-overlay: "#e2e2e2"
+format: closeread-html
 ---
 
 
