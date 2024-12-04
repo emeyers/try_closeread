@@ -4,29 +4,23 @@ format: closeread-html
 ---
 
 
-
-
 :::{.cr-section}
 
+The end of the first two lines of a Limerick must rhyme. [@cr-limerick]{highlight="cr-mallory,cr-salary"}
 
-Check out our cool plot @cr-graphic
+The end of the third and fourth line also rhyme and are nudged in a bit. [@cr-limerick]{highlight="3-4"}
 
-It shows a 100 random values from a normal distribution. @cr-graphic
-
-In a histogram @cr-graphic
+And everything [@cr-limerick]
 
 
-:::{#cr-graphic}
-
-```{r}
-
-hist(rnorm(100))
-
-```
+| {#cr-limerick}
+| There was a young rustic named [Mallory]{#cr-mallory},
+| who drew but a very small [salary]{#cr-salary}.
+|   When he went to the show,
+|   his purse made him go
+| to a seat in the uppermost gallery.
 
 :::
 
 
 :::
-
-
