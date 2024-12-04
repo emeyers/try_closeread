@@ -6,14 +6,14 @@ format: closeread-html
 
 
 
-::::{.cr-section}
+:::{.cr-section}
 
 
-Check out our cool plot! @cr-graphic
+Check out our cool plot @cr-graphic
 
-It shows a 100 random values from a normal distribution... @cr-graphic
+It shows a 100 random values from a normal distribution. @cr-graphic
 
-In a histogram! @cr-graphic
+In a histogram @cr-graphic
 
 
 :::{#cr-graphic}
@@ -27,6 +27,6 @@ hist(rnorm(100))
 :::
 
 
-::::
+:::
 
 
