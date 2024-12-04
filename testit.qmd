@@ -1,0 +1,26 @@
+---
+title: Try it out
+format: closeread-html
+---
+
+
+:::{.cr-section}
+
+The end of the first two lines of a Limerick must rhyme. [@cr-limerick]{highlight="cr-mallory,cr-salary"}
+
+The end of the third and fourth line also rhyme and are nudged in a bit. [@cr-limerick]{highlight="3-4"}
+
+And everything [@cr-limerick]
+
+
+| {#cr-limerick}
+| There was a young rustic named [Mallory]{#cr-mallory},
+| who drew but a very small [salary]{#cr-salary}.
+|   When he went to the show,
+|   his purse made him go
+| to a seat in the uppermost gallery.
+
+:::
+
+
+:::
